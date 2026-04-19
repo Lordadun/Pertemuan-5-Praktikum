@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Book;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,11 @@ Route::get('/', function () {
 // route return string
 Route::get('/test', function(){
     return 'Hello World';
+});
+
+Route::get('/books', function(){
+    $data['books'] = Book::all();
+    return view('books.index', $data);
 });
 
 // route view
