@@ -11,6 +11,14 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ auth()->user()->username }}
                 </div>
+
+                @hasrole('pustakawan')
+                    <p>Saya Dadun</p>
+                @endhasrole
+                @hasrole('mahasiswa')
+                    <p>Saya Satpol</p>
+                @endhasrole
+                
             </div>
         </div>
     </div>
